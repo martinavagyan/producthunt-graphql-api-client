@@ -1,0 +1,25 @@
+{
+  posts(postedAfter: "2020-09-10") {
+    totalCount
+    pageInfo {
+      endCursor
+    }
+    edges {
+      node {
+        topics {
+          edges {
+            node {
+              name
+              id
+            }
+          }
+        }
+        name
+        description
+        createdAt
+        reviewsCount
+        reviewsRating
+      }
+    }
+  }
+}
