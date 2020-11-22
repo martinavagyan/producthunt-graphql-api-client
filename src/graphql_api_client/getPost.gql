@@ -1,0 +1,28 @@
+query ($postId: ID) {
+  post(id: $postId) {
+      commentsCount
+      createdAt
+      description
+      featuredAt
+      id
+      isCollected
+      isVoted
+      name
+      reviewsCount
+      reviewsRating
+      slug
+      tagline
+      topics {
+        edges {
+          node {
+            name
+            id
+          }
+        }
+      }
+      url
+      userId
+      votesCount
+      website
+    }
+}

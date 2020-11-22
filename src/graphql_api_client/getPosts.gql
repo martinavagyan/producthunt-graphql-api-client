@@ -1,8 +1,9 @@
-{
-  posts(postedAfter: "2020-09-10") {
+query ($postedAfterDate: DateTime!, $cursor: String) {
+  posts(postedAfter: $postedAfterDate, after: $cursor, first: 20) {
     totalCount
     pageInfo {
       endCursor
+      hasNextPage
     }
     edges {
       node {
@@ -14,12 +15,19 @@
             }
           }
         }
+        id
         name
         description
         createdAt
+        commentsCount
         reviewsCount
         reviewsRating
       }
     }
   }
+}
+
+{
+	"postedAfterDate": "2020-11-22",
+  "cursor": "MTA="
 }
